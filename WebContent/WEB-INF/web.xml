@@ -8,12 +8,21 @@
 	
 
 <servlet>
-	<servlet-name>Test</servlet-name>
-	<servlet-class>kappaApi.Test</servlet-class>
+	<servlet-name>Accueil</servlet-name>
+	<servlet-class>KappaCRM.Controller.CControllerAccueil</servlet-class>
+	<load-on-startup>1</load-on-startup>
 </servlet><servlet-mapping>
-	<servlet-name>Test</servlet-name>
-	<url-pattern>/toto</url-pattern>
-</servlet-mapping></web-app>
+	<servlet-name>Accueil</servlet-name>
+	<url-pattern>/</url-pattern>
+</servlet-mapping>
+	<servlet>
+		<servlet-name>Connection</servlet-name>
+		<servlet-class>KappaCRM.Controller.CControllerConnection</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Connection</servlet-name>
+		<url-pattern>/Connection</url-pattern>
+	</servlet-mapping></web-app>
 
 
 
