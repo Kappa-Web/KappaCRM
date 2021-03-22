@@ -12,6 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 public class CControllerConnection extends HttpServlet{
 	
 	
+	
+	
 	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
 		
 		this.getServletContext().getRequestDispatcher( "/WEB-INF/Connection.jsp" ).forward( request, response );
