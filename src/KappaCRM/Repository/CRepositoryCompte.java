@@ -14,28 +14,23 @@ public class CRepositoryCompte {
 		
 	}
 	
-	public boolean existValidByIdAndPassword(CModelCompte compte) throws SQLException
+	public boolean existValidByUsernameAndPassword(CModelCompte compte) throws SQLException
 	{
 		
 		Connection conn;
-		try {
+		
 			conn = CUtilityStorage.getBasicConnectionPool().getConnection();
 			PreparedStatement state = conn.prepareStatement("SELECT EXISTS(SELECT * FROM "
-					+ "comptes WHERE `id` =  ? AND mot_de_passe = ?)");
+					+ "comptes WHERE `username` =  ? AND mot_de_passe = ?) as result");
 			
-			state.setLong(1, compte.getId());
+			state.setString(1, compte.getIdentifiant());
 			state.setString(2, compte.getMotDePasse());
 			
-			boolean result = state.execute();
-			CUtilityStorage.getBasicConnectionPool().releaseConnection(conn);
+			ResultSet result = state.executeQuery();	
 			
-			return result;
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 			CUtilityStorage.getBasicConnectionPool().releaseConnection(conn);
-			return false;
-		}
+			result.next();
+			return result.getBoolean(1);			
+		
 	}
 }

@@ -5,6 +5,13 @@ import java.util.Date;
 public class CModelCompte {
 
 	private long id;
+	private String identifiant;
+	public String getIdentifiant() {
+		return identifiant;
+	}
+	public void setIdentifiant(String identifiant) {
+		this.identifiant = identifiant;
+	}
 	private String motDePasse;
 	private int typeCompte;
 	private Boolean IsValid;

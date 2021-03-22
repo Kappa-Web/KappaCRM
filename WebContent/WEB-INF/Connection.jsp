@@ -12,8 +12,8 @@
                 <legend>Connection</legend>
                 <p>Vous pouvez vous connecter via ce formulaire.</p>
                 
-                <label for="nom">Id <span class="requis">*</span></label>
-                <input type="text" id="id" name="id" value="" size="20" maxlength="60" />
+                <label for="nom">Identifiant <span class="requis">*</span></label>
+                <input type="text" id="identifiant" name="identifiant" value="" size="20" maxlength="60" />
                 <span class="erreur">${form.erreurs['email']}</span>
                 <br />
 
