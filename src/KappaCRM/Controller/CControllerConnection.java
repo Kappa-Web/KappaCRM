@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import KappaCRM.Model.CModelCompte;
 import KappaCRM.Repository.CRepositoryCompte;
-import KappaCRM.Service.CServiceConnection;
+import KappaCRM.Service.CServiceCompte;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,7 +14,6 @@ import jakarta.servlet.http.HttpServletResponse;
 @SuppressWarnings("serial")
 public class CControllerConnection extends HttpServlet{
 	
-	CServiceConnection serviceConnection;
 	
 	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
 		
@@ -24,19 +23,16 @@ public class CControllerConnection extends HttpServlet{
 	
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
 		
-		CRepositoryCompte repo = new CRepositoryCompte();
-		
+		CServiceCompte service = new CServiceCompte();
 		CModelCompte compte =new CModelCompte();
 		compte.setIdentifiant(request.getParameter("identifiant"));
 		compte.setMotDePasse( request.getParameter("motdepasse"));
 		
-		try {
-		boolean result = repo.existValidByUsernameAndPassword(compte);
-		System.out.print(result);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(service.CompteExistByUsernameAndPassword(compte)) {
+			compte = service.getCompteByUsernameAndPassword(compte);
+			request.getSession().setAttribute("compte", compte);
 		}
+		
 		
 		request.getSession().setAttribute("id", request.getParameter("id"));
 		this.getServletContext().getRequestDispatcher( "/WEB-INF/Accueil.jsp" ).forward( request, response );
