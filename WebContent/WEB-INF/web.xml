@@ -22,6 +22,14 @@
 	<servlet-mapping>
 		<servlet-name>Connection</servlet-name>
 		<url-pattern>/Connection</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Main</servlet-name>
+		<servlet-class>KappaCRM.Controller.CControllerMain</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Main</servlet-name>
+		<url-pattern>/Main</url-pattern>
 	</servlet-mapping></web-app>
 
 
