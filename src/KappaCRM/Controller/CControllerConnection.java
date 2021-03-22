@@ -1,10 +1,7 @@
 package KappaCRM.Controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
-
 import KappaCRM.Model.CModelCompte;
-import KappaCRM.Repository.CRepositoryCompte;
 import KappaCRM.Service.CServiceCompte;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -31,11 +28,14 @@ public class CControllerConnection extends HttpServlet{
 		if(service.CompteExistByUsernameAndPassword(compte)) {
 			compte = service.getCompteByUsernameAndPassword(compte);
 			request.getSession().setAttribute("compte", compte);
+			response.sendRedirect("/KappaCRM/Main");
+		}
+		else
+		{
+			request.setAttribute("error", "identifiant or mot de passe invalide");
+			this.getServletContext().getRequestDispatcher( "/WEB-INF/Connection.jsp" ).forward( request, response );
 		}
 		
-		
-		request.getSession().setAttribute("id", request.getParameter("id"));
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/Accueil.jsp" ).forward( request, response );
 	}
 }
 
