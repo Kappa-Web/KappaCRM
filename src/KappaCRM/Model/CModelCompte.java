@@ -6,17 +6,24 @@ public class CModelCompte {
 
 	private long id;
 	private String identifiant;
+	private String motDePasse;
+	private String typeCompte;
+	private Boolean IsValid;
+	private Date DateCreation;
+	private Date DateFin;
+	
+	
+	public CModelCompte(){
+		setId(0);
+	}
+	
 	public String getIdentifiant() {
 		return identifiant;
 	}
 	public void setIdentifiant(String identifiant) {
 		this.identifiant = identifiant;
 	}
-	private String motDePasse;
-	private int typeCompte;
-	private Boolean IsValid;
-	private Date DateCreation;
-	private Date DateFin;
+	
 	
 	public Boolean getIsValid() {
 		return IsValid;
@@ -48,10 +55,10 @@ public class CModelCompte {
 	public void setMotDePasse(String motDePasse) {
 		this.motDePasse = motDePasse;
 	}
-	public int getTypeCompte() {
+	public String getTypeCompte() {
 		return typeCompte;
 	}
-	public void setTypeCompte(int typeCompte) {
+	public void setTypeCompte(String typeCompte) {
 		this.typeCompte = typeCompte;
 	}
 	
