@@ -14,6 +14,11 @@ public class CModelEntity {
 	private Date date_anniversaire;
 	private Date date_mort;
 	
+	
+	public CModelEntity() {
+		setId(0);
+	}
+	
 	public long getId() {
 		return id;
 	}
