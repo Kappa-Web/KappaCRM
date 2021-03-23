@@ -30,6 +30,14 @@
 	<servlet-mapping>
 		<servlet-name>Main</servlet-name>
 		<url-pattern>/Main</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Profil</servlet-name>
+		<servlet-class>KappaCRM.Controller.CControllerProfil</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Profil</servlet-name>
+		<url-pattern>/Profil</url-pattern>
 	</servlet-mapping></web-app>
 
 
