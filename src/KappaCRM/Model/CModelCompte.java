@@ -11,8 +11,16 @@ public class CModelCompte {
 	private Boolean IsValid;
 	private Date DateCreation;
 	private Date DateFin;
+	private long fk_id_entity;
 	
-	
+	public long getFk_id_entity() {
+		return fk_id_entity;
+	}
+
+	public void setFk_id_entity(long fk_id_entity) {
+		this.fk_id_entity = fk_id_entity;
+	}
+
 	public CModelCompte(){
 		setId(0);
 	}
