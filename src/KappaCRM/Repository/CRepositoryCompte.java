@@ -52,6 +52,7 @@ public class CRepositoryCompte {
 		
 		compte.setId(result.getInt(1));
 		compte.setTypeCompte(result.getString(4));
+		compte.setFk_id_entity(result.getLong(8));
 		
 		return compte;
 		
