@@ -3,6 +3,7 @@ package KappaCRM.Controller;
 import java.io.IOException;
 
 import KappaCRM.Model.CModelCompte;
+import KappaCRM.Utility.CUtilityValidation;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,7 +17,7 @@ public void doGet( HttpServletRequest request, HttpServletResponse response ) th
 	
 	HttpSession session = request.getSession();
 	
-	if(session.getAttribute("compte") != null || ((CModelCompte)session.getAttribute("compte")).getId() != 0)
+	if(CUtilityValidation.CompteIsValid(session))
 	{
 		this.getServletContext().getRequestDispatcher( "/WEB-INF/Civil/MainCivil.jsp" ).forward( request, response );
 	}
