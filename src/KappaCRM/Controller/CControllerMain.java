@@ -7,16 +7,26 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @SuppressWarnings("serial")
 public class CControllerMain  extends HttpServlet{
 
 public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
 	
-	if(request.getSession().getAttribute("compte") == null or)
+	HttpSession session = request.getSession();
+	
+	if(session.getAttribute("compte") != null || ((CModelCompte)session.getAttribute("compte")).getId() != 0)
+	{
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/Civil/MainCivil.jsp" ).forward( request, response );
+	}
+	else
+	{
+		response.sendRedirect("/KappaCRM");
+	}
 
 
-	this.getServletContext().getRequestDispatcher( "/WEB-INF/Civil/MainCivil.jsp" ).forward( request, response );
+	
 		
 	}
 	
