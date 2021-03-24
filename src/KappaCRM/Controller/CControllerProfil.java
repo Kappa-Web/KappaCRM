@@ -2,6 +2,8 @@ package KappaCRM.Controller;
 
 import java.io.IOException;
 
+import KappaCRM.Model.CModelCompte;
+import KappaCRM.Repository.CRepositoryEntity;
 import KappaCRM.Utility.CUtilityValidation;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -17,6 +19,10 @@ public class CControllerProfil extends HttpServlet {
 		
 		if(CUtilityValidation.CompteIsValid(session))
 		{
+			CRepositoryEntity repo = new CRepositoryEntity();
+			CModelCompte compte = (CModelCompte) session.getAttribute("compte");
+			
+			repo.findById(compte.getFk_id_entity());
 			this.getServletContext().getRequestDispatcher( "/WEB-INF/Profil.jsp" ).forward( request, response );
 		}
 		else
