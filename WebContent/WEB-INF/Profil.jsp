@@ -16,8 +16,13 @@
 CModelEntity entity = (CModelEntity)request.getAttribute("entity");
 if(entity != null && entity.getId()!=0)
 {
+	String completName = entity.getCivilite() + " " + entity.getNom() +" " + entity.getPrenom() ;
+%>
 	
+	<div><% out.print(completName); %></div>
+	<div></div>
 	
+	<%	
 }
 else
 {
