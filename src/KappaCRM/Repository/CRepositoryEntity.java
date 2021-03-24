@@ -29,9 +29,9 @@ public class CRepositoryEntity {
 		if(result.next()) {
 		
 			entity.setId(result.getLong(1));
-			entity.setNom(result.getString(2));
-			entity.setPremon(result.getString(3));
-			entity.setCivilite(result.getString(4));
+			entity.setNom(result.getString(3));
+			entity.setPrenom(result.getString(4));
+			entity.setCivilite(result.getString(5));
 			
 			
 		}
