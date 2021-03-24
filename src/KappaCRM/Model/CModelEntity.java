@@ -7,7 +7,7 @@ public class CModelEntity {
 	private long id;
 	private long fk_type;
 	private String nom;
-	private String premon;
+	private String prenom;
 	private String civilite;
 	private String adresse;
 	private String numero;
@@ -37,11 +37,11 @@ public class CModelEntity {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public String getPremon() {
-		return premon;
+	public String getPrenom() {
+		return prenom;
 	}
-	public void setPremon(String premon) {
-		this.premon = premon;
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 	public String getCivilite() {
 		return civilite;
