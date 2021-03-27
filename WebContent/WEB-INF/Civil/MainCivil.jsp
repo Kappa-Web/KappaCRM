@@ -19,5 +19,9 @@
 <form action="Profil">
     <input type="submit" value="Profil" />
 </form>
+
+<form action="Incident/Declaration">
+    <input type="submit" value="Declarer un incident" />
+</form>
 </body>
 </html>
