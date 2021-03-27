@@ -28,15 +28,32 @@ public class CRepositoryEntity {
 		
 		if(result.next()) {
 		
-			entity.setId(result.getLong(1));
-			entity.setNom(result.getString(3));
-			entity.setPrenom(result.getString(4));
-			entity.setCivilite(result.getString(5));
+			entity = InsertValue(result);
 			
 			
 		}
 		
 		
 		return entity;
+	}
+	
+	private CModelEntity InsertValue(ResultSet result) throws SQLException {
+		CModelEntity entity = new CModelEntity();
+		 
+		entity.setId(result.getLong("id"));
+		entity.setFk_type(result.getLong("fk_type"));
+		entity.setNom(result.getString("nom"));
+		entity.setPrenom(result.getString("prenom"));
+		entity.setCivilite(result.getString("civilite"));
+		entity.setAdresse(result.getString("adresse"));
+		entity.setEmail(result.getString("email"));
+		entity.setNumero(result.getString("numero"));
+		entity.setDate_anniversaire(result.getDate("date_anniversaire"));
+		entity.setDate_mort(result.getDate("date_mort"));
+		entity.setNb_incident(result.getInt("nb_incident"));
+		entity.setNb_mission(result.getInt("nb_mission"));
+		
+		 return entity;
+		 
 	}
 }
