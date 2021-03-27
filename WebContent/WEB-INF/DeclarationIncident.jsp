@@ -9,7 +9,7 @@
 <body>
 <div>Declaration d'un incident</div>
 
- <form method="post" action="DeclarationIncident">
+ <form method="post" action="">
             <fieldset>
                 <legend>Déclarer un incident</legend>
                 <p>Vous pouvez declarer un incident via ce formulaire.</p>
@@ -30,5 +30,6 @@
                 <br />
                       
             </fieldset>
+	</form>
 </body>
 </html>
