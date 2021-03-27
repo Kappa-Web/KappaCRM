@@ -1,5 +1,6 @@
 package KappaCRM.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import KappaCRM.Model.CModelCompte;
@@ -9,22 +10,26 @@ import java.sql.*;
 
 public class CRepositoryCompte {
 	
-	public List<CModelCompte> findAll() {
+	public List<CModelCompte> findAll() throws SQLException {
 		
 		
 		Connection conn;
 		
-		/*	conn = CUtilityStorage.getBasicConnectionPool().getConnection();
-			PreparedStatement state = conn.prepareStatement("SELECT EXISTS(SELECT * FROM "
-					+ "comptes WHERE `username` =  ? AND mot_de_passe = ?) as result");
-			
-			
-			
-			ResultSet result = state.executeQuery();	
-			
-			CUtilityStorage.getBasicConnectionPool().releaseConnection(conn);
-			result.next();*/
-			return null;			
+		conn = CUtilityStorage.getBasicConnectionPool().getConnection();
+		PreparedStatement state = conn.prepareStatement("SELECT * FROM comptes");
+		
+		
+		ResultSet result = state.executeQuery();
+		
+		CUtilityStorage.getBasicConnectionPool().releaseConnection(conn);
+		
+		List<CModelCompte> comptes = new ArrayList<>();
+		
+		while(result.next()) {
+			comptes.add(InsertValue(result));
+		}
+		
+		return comptes;		
 		
 	}
 	
@@ -48,17 +53,27 @@ public class CRepositoryCompte {
 		
 		CUtilityStorage.getBasicConnectionPool().releaseConnection(conn);
 		
-		result.next();
+		result.next();		
 		
-		compte.setId(result.getInt(1));
-		compte.setTypeCompte(result.getString(4));
-		compte.setFk_id_entity(result.getLong(8));
-		
-		return compte;
+		return InsertValue(result);
 		
 	}
 	
 	
+	private CModelCompte InsertValue(ResultSet result) throws SQLException {
+		
+		CModelCompte compte = new CModelCompte();
+		compte.setId(result.getInt("id"));
+		compte.setIdentifiant("");
+		compte.setMotDePasse("");
+		compte.setTypeCompte(result.getString("type_compte"));
+		compte.setIsValid(result.getBoolean("est_valide"));
+		compte.setDateCreation(result.getDate("date_creation"));
+		compte.setDateFin(result.getDate("date_fin"));
+		compte.setFk_id_entity(result.getLong("fk_id_entite"));
+		
+		return compte;
+	}
 	
 	public boolean existValidByUsernameAndPassword(CModelCompte compte) throws SQLException
 	{
