@@ -2,6 +2,8 @@ package KappaCRM.Controller;
 
 import java.io.IOException;
 import KappaCRM.Model.CModelCompte;
+import KappaCRM.Model.CModelIncident;
+import KappaCRM.Repository.CRepositoryIncident;
 import KappaCRM.Service.CServiceCompte;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
