@@ -1,7 +1,10 @@
 package KappaCRM.Controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
+import KappaCRM.Model.CModelIncident;
+import KappaCRM.Repository.CRepositoryIncident;
 import KappaCRM.Utility.CUtilityValidation;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -23,6 +26,22 @@ public class CControllerDeclarationIncident extends HttpServlet {
 			response.sendRedirect("/KappaCRM");
 		}
 
+	}
+	
+	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
+		System.out.println("declaration");
+		
+		CModelIncident incident = new CModelIncident();
+		
+		
+		CRepositoryIncident repo = new CRepositoryIncident();
+		
+		try {
+			repo.insert(incident);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
