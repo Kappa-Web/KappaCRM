@@ -13,16 +13,20 @@
             <fieldset>
                 <legend>Déclarer un incident</legend>
                 <p>Vous pouvez declarer un incident via ce formulaire.</p>
-                <label for="Libelle">Identifiant <span class="requis">*</span></label>
+                <label for="Libelle">Libéllé <span class="requis">*</span></label>
                 <input type="text" id="Libelle" name="Libelle" value="" size="20" maxlength="60" />
                
                 <br />
 
-                <label for="motdepasse">Mot de passe <span class="requis">*</span></label>
-                <input type="password" id="motdepasse" name="motdepasse" value="" size="20" maxlength="20" />
+                <label for="Description">Description <span class="requis">*</span></label>
+                <textarea id="Description" name="Description"cols="33"></textarea>
+                <br />
+                
+                <label for="Position">Position <span class="requis">*</span></label>
+                <input type="text" id="Position" name="Position" value="" size="20" />
                 <br />
 
-                <input type="submit" value="Connection" class="sansLabel" />
+                <input type="submit" value="Soumettre" class="sansLabel" />
                 <br />
                       
             </fieldset>
