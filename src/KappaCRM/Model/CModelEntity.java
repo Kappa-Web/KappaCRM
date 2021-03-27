@@ -10,10 +10,38 @@ public class CModelEntity {
 	private String prenom;
 	private String civilite;
 	private String adresse;
+	private String email;
 	private String numero;
 	private Date date_anniversaire;
 	private Date date_mort;
+	private int nb_incident;
+	private int nb_mission;
 	
+	
+	public int getNb_incident() {
+		return nb_incident;
+	}
+
+	public void setNb_incident(int nb_incident) {
+		this.nb_incident = nb_incident;
+	}
+
+	public int getNb_mission() {
+		return nb_mission;
+	}
+
+	public void setNb_mission(int nb_mission) {
+		this.nb_mission = nb_mission;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	
 	public CModelEntity() {
 		setId(0);
