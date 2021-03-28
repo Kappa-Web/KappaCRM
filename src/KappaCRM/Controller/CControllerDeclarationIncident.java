@@ -3,8 +3,10 @@ package KappaCRM.Controller;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import KappaCRM.Model.CModelCompte;
 import KappaCRM.Model.CModelIncident;
 import KappaCRM.Repository.CRepositoryIncident;
+import KappaCRM.Service.CServiceIncident;
 import KappaCRM.Utility.CUtilityValidation;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -31,17 +33,18 @@ public class CControllerDeclarationIncident extends HttpServlet {
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
 		System.out.println("declaration");
 		
+		HttpSession session = request.getSession();
+		CModelCompte compte = (CModelCompte)session.getAttribute("compte");
 		CModelIncident incident = new CModelIncident();
+		incident.setFkIdEntiteDeclarant(compte.getFk_id_entity());
+		incident.setLibelle(request.getParameter("Libelle").toString());
+		incident.setDescription(request.getParameter("Description").toString());
+		incident.setLieu(request.getParameter("Position").toString());
 		
+		CServiceIncident serviceIncident = new CServiceIncident();
+		serviceIncident.insertIncident(incident);
 		
-		CRepositoryIncident repo = new CRepositoryIncident();
-		
-		try {
-			repo.insert(incident);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 	}
 
 }
