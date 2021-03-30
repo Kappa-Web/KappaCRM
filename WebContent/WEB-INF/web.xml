@@ -47,6 +47,14 @@
 		<servlet-name>DeclarationIncident</servlet-name>
 		<url-pattern>/Incident/Declaration</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>Litige</servlet-name>
+		<servlet-class>KappaCRM.Controller.CControllerLitige</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Litige</servlet-name>
+		<url-pattern>/Litige</url-pattern>
+	</servlet-mapping>
 	</web-app>
 
 
