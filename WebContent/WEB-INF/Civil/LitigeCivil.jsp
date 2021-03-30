@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Litige</title>
 </head>
 <body>
+<form action="Declaration">
+    <input type="submit" value="Declarer un litige" />
+</form>
+
 
 </body>
 </html>
