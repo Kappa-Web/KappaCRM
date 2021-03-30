@@ -23,5 +23,9 @@
 <form action="Incident/Declaration">
     <input type="submit" value="Declarer un incident" />
 </form>
+
+<form action="Litige">
+    <input type="submit" value="Litige" />
+</form>
 </body>
 </html>
