@@ -1,6 +1,6 @@
 package KappaCRM.Model;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class CModelEntity {
 
@@ -8,15 +8,17 @@ public class CModelEntity {
 	private long fk_type;
 	private String nom;
 	private String prenom;
-	private String civilite;
+	private long fk_civilite;
 	private String adresse;
 	private String email;
 	private String numero;
-	private Date date_anniversaire;
-	private Date date_mort;
+	private Timestamp date_naissance;
+	private Timestamp date_mort;	
 	private int nb_incident;
 	private int nb_mission;
-	
+	private long fk_sexe;
+	private String commentaire;
+	private int score;
 	
 	public int getNb_incident() {
 		return nb_incident;
@@ -71,12 +73,6 @@ public class CModelEntity {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public String getCivilite() {
-		return civilite;
-	}
-	public void setCivilite(String civilite) {
-		this.civilite = civilite;
-	}
 	public String getAdresse() {
 		return adresse;
 	}
@@ -89,17 +85,52 @@ public class CModelEntity {
 	public void setNumero(String numero) {
 		this.numero = numero;
 	}
-	public Date getDate_anniversaire() {
-		return date_anniversaire;
+	public long getFk_sexe() {
+		return fk_sexe;
 	}
-	public void setDate_anniversaire(Date date_anniversaire) {
-		this.date_anniversaire = date_anniversaire;
+
+	public void setFk_sexe(long fk_sexe) {
+		this.fk_sexe = fk_sexe;
 	}
-	public Date getDate_mort() {
+
+	public long getFk_civilite() {
+		return fk_civilite;
+	}
+
+	public void setFk_civilite(long fk_civilite) {
+		this.fk_civilite = fk_civilite;
+	}
+
+	public Timestamp getDate_naissance() {
+		return date_naissance;
+	}
+
+	public void setDate_naissance(Timestamp date_naissance) {
+		this.date_naissance = date_naissance;
+	}
+
+	public Timestamp getDate_mort() {
 		return date_mort;
 	}
-	public void setDate_mort(Date date_mort) {
+
+	public void setDate_mort(Timestamp date_mort) {
 		this.date_mort = date_mort;
+	}
+
+	public String getCommentaire() {
+		return commentaire;
+	}
+
+	public void setCommentaire(String commentaire) {
+		this.commentaire = commentaire;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
 	}
 
 }
