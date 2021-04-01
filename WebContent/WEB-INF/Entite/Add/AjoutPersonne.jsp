@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,9 +13,9 @@
 
 <select name="typeEntite" id="typeEntite">
 
-<c:set var="typeEntite" value=r scope="page" />
 
-<c:forEach items='${requestScope["typeEntites"]}' var="item">
+
+<c:forEach items="${typeEntites}" var="item">
     ${item}<br>
 </c:forEach>
     <option value="">--Please choose an option--</option>
