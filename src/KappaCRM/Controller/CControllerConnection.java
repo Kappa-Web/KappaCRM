@@ -5,10 +5,10 @@ import KappaCRM.Model.CModelCompte;
 import KappaCRM.Model.CModelIncident;
 import KappaCRM.Repository.CRepositoryIncident;
 import KappaCRM.Service.CServiceCompte;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
 public class CControllerConnection extends HttpServlet{
