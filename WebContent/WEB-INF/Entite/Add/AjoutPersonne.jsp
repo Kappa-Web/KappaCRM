@@ -13,17 +13,29 @@
 
 <div>
 
- <form method="post" action="">
-      <label for="typeEntite">Choose a entity :</label>
-<select name="typeEntite" id="typeEntite">
 
-    <c:forEach items="${typeEntites}" var="item">
-      <option value="<c:out value='${item.id}' />"><c:out value='${item.libelle}' /></option>
-	</c:forEach>  
-</select>
+<jsp:include page="Select.jsp" />  
 
- <input type="submit" value="Change" class="sansLabel" />    
-</form>
+
+
+        <form method="post" action="">
+            <fieldset>
+                <legend>Information</legend>               
+                <label for="nom">Nom <span class="requis">*</span></label>
+                <input type="text" id="Nom" name="Nom" value="" size="20" maxlength="60" />
+               
+                <br />
+
+                <label for="Prenom">Prénom <span class="requis">*</span></label>
+                <input type="text" id="Prenom" name="Prenom" value="" size="20" maxlength="60" />
+                <br />
+
+				
+                <input type="submit" value="Enregistrer" class="sansLabel" />
+                <br />
+                      
+            </fieldset>
+        </form>
 	
 
 </div>
