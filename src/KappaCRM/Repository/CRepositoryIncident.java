@@ -1,12 +1,8 @@
 package KappaCRM.Repository;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import KappaCRM.Model.CModelEntity;
 import KappaCRM.Model.CModelIncident;
 import KappaCRM.Utility.CUtilityStorage;
 

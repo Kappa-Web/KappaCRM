@@ -28,7 +28,7 @@ public class CRepositoryEntity {
 		
 		if(result.next()) {
 		
-			entity = InsertValue(result);
+			entity = createModel(result);
 			
 			
 		}
@@ -37,19 +37,54 @@ public class CRepositoryEntity {
 		return entity;
 	}
 	
-	private CModelEntity InsertValue(ResultSet result) throws SQLException {
+	
+	public void insert(CModelEntity entity) throws SQLException {
+		
+		
+		Connection conn;
+		
+		conn = CUtilityStorage.getBasicConnectionPool().getConnection();
+		PreparedStatement state = conn.prepareStatement("INSERT INTO `entite`(`fk_type`, `nom`,"
+				+ " `prenom`, `fk_sexe`, `fk_civilite`, `adresse`, `email`, `numero`, `date_naissance`, "
+				+ "`date_mort`, `date_ajout`, `date_modif`, `commentaire`, `nb_incident`, `nb_mission`, `score`)"
+				+ " VALUES (?,?,?,?,?,?,?,?,?"
+				+ ",?,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,?,?,?,?)");
+		
+		
+		state.setLong(1,entity.getFk_type());
+		state.setString(2,entity.getNom());		
+		state.setString(3, entity.getPrenom());
+		state.setLong(4,entity.getFk_sexe());
+		state.setLong(5,entity.getFk_civilite());
+		state.setString(6, entity.getAdresse());
+		state.setString(7, entity.getEmail());
+		state.setString(8, entity.getNumero());
+		state.setTimestamp(9, entity.getDate_naissance());
+		state.setTimestamp(10, entity.getDate_mort());
+		state.setString(11, entity.getCommentaire());
+		state.setInt(12, entity.getNb_incident());
+		state.setInt(13, entity.getNb_mission());
+		state.setInt(14, entity.getScore());
+		
+		
+		state.execute();
+	
+		CUtilityStorage.getBasicConnectionPool().releaseConnection(conn);
+	}
+	
+	private CModelEntity createModel(ResultSet result) throws SQLException {
 		CModelEntity entity = new CModelEntity();
 		 
 		entity.setId(result.getLong("id"));
 		entity.setFk_type(result.getLong("fk_type"));
 		entity.setNom(result.getString("nom"));
 		entity.setPrenom(result.getString("prenom"));
-		entity.setCivilite(result.getString("civilite"));
+		entity.setFk_civilite(result.getLong("fk_civilite"));
 		entity.setAdresse(result.getString("adresse"));
 		entity.setEmail(result.getString("email"));
 		entity.setNumero(result.getString("numero"));
-		entity.setDate_anniversaire(result.getDate("date_anniversaire"));
-		entity.setDate_mort(result.getDate("date_mort"));
+		entity.setDate_naissance(result.getTimestamp("date_naissance"));
+		entity.setDate_mort(result.getTimestamp("date_mort"));
 		entity.setNb_incident(result.getInt("nb_incident"));
 		entity.setNb_mission(result.getInt("nb_mission"));
 		

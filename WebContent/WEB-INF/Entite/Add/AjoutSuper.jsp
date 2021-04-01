@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Ajout Super</title>
 </head>
 <body>
-
+<div>
+<jsp:include page="Select.jsp" />  
+</div>
 </body>
 </html>

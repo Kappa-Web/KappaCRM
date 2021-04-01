@@ -1,7 +1,7 @@
 package KappaCRM.Utility;
 
 import KappaCRM.Model.CModelCompte;
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.http.HttpSession;
 
 public class CUtilityValidation {
 
