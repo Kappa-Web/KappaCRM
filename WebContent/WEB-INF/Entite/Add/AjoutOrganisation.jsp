@@ -7,6 +7,8 @@
 <title>Ajout Organisation</title>
 </head>
 <body>
-
+<div>
+<jsp:include page="Select.jsp" />  
+</div>
 </body>
 </html>
