@@ -4,22 +4,18 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
   version="3.0">
-
-    <jsp-config>
-        <jsp-property-group>
-            <url-pattern>*.jsp</url-pattern>
-            <include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
-        </jsp-property-group>
-    </jsp-config>	
-
+  	
 <servlet>
 	<servlet-name>Accueil</servlet-name>
 	<servlet-class>KappaCRM.Controller.CControllerAccueil</servlet-class>
 	<load-on-startup>1</load-on-startup>
-</servlet><servlet-mapping>
+</servlet>
+<servlet-mapping>
 	<servlet-name>Accueil</servlet-name>
 	<url-pattern>/</url-pattern>
 </servlet-mapping>
+
+
 	<servlet>
 		<servlet-name>Connection</servlet-name>
 		<servlet-class>KappaCRM.Controller.CControllerConnection</servlet-class>
@@ -28,6 +24,8 @@
 		<servlet-name>Connection</servlet-name>
 		<url-pattern>/Connection</url-pattern>
 	</servlet-mapping>
+	
+	
 	<servlet>
 		<servlet-name>Main</servlet-name>
 		<servlet-class>KappaCRM.Controller.CControllerMain</servlet-class>
@@ -36,6 +34,7 @@
 		<servlet-name>Main</servlet-name>
 		<url-pattern>/Main</url-pattern>
 	</servlet-mapping>
+	
 	<servlet>
 		<servlet-name>Profil</servlet-name>
 		<servlet-class>KappaCRM.Controller.CControllerProfil</servlet-class>
@@ -44,6 +43,7 @@
 		<servlet-name>Profil</servlet-name>
 		<url-pattern>/Profil</url-pattern>
 	</servlet-mapping>
+	
 		<servlet>
 		<servlet-name>DeclarationIncident</servlet-name>
 		<servlet-class>KappaCRM.Controller.CControllerDeclarationIncident</servlet-class>
@@ -60,13 +60,14 @@
 		<servlet-name>Litige</servlet-name>
 		<url-pattern>/Litige</url-pattern>
 	</servlet-mapping>
+	
 		<servlet>
 		<servlet-name>AjoutEntite</servlet-name>
 		<servlet-class>KappaCRM.Controller.CControllerAjoutEntite</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>AjoutEntite</servlet-name>
-		<url-pattern>Entite/AjoutEntite</url-pattern>
+		<url-pattern>/Entite/AjoutEntite</url-pattern>
 	</servlet-mapping>
 	</web-app>
 
