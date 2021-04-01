@@ -55,6 +55,14 @@
 		<servlet-name>Litige</servlet-name>
 		<url-pattern>/Litige</url-pattern>
 	</servlet-mapping>
+		<servlet>
+		<servlet-name>AjoutEntite</servlet-name>
+		<servlet-class>KappaCRM.Controller.CControllerAjoutEntite</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AjoutEntite</servlet-name>
+		<url-pattern>Entite/AjoutEntite</url-pattern>
+	</servlet-mapping>
 	</web-app>
 
 
