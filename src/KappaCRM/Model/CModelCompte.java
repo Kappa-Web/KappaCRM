@@ -5,11 +5,33 @@ import java.util.Date;
 public class CModelCompte {
 
 	private long id;
+	private String identifiant;
 	private String motDePasse;
-	private int typeCompte;
+	private String typeCompte;
 	private Boolean IsValid;
 	private Date DateCreation;
 	private Date DateFin;
+	private long fk_id_entity;
+	
+	public long getFk_id_entity() {
+		return fk_id_entity;
+	}
+
+	public void setFk_id_entity(long fk_id_entity) {
+		this.fk_id_entity = fk_id_entity;
+	}
+
+	public CModelCompte(){
+		setId(0);
+	}
+	
+	public String getIdentifiant() {
+		return identifiant;
+	}
+	public void setIdentifiant(String identifiant) {
+		this.identifiant = identifiant;
+	}
+	
 	
 	public Boolean getIsValid() {
 		return IsValid;
@@ -41,10 +63,10 @@ public class CModelCompte {
 	public void setMotDePasse(String motDePasse) {
 		this.motDePasse = motDePasse;
 	}
-	public int getTypeCompte() {
+	public String getTypeCompte() {
 		return typeCompte;
 	}
-	public void setTypeCompte(int typeCompte) {
+	public void setTypeCompte(String typeCompte) {
 		this.typeCompte = typeCompte;
 	}
 	

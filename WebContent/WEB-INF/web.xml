@@ -4,17 +4,18 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
   version="3.0">
-
-	
-
+  	
 <servlet>
 	<servlet-name>Accueil</servlet-name>
 	<servlet-class>KappaCRM.Controller.CControllerAccueil</servlet-class>
 	<load-on-startup>1</load-on-startup>
-</servlet><servlet-mapping>
+</servlet>
+<servlet-mapping>
 	<servlet-name>Accueil</servlet-name>
 	<url-pattern>/</url-pattern>
 </servlet-mapping>
+
+
 	<servlet>
 		<servlet-name>Connection</servlet-name>
 		<servlet-class>KappaCRM.Controller.CControllerConnection</servlet-class>
@@ -22,7 +23,63 @@
 	<servlet-mapping>
 		<servlet-name>Connection</servlet-name>
 		<url-pattern>/Connection</url-pattern>
-	</servlet-mapping></web-app>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Main</servlet-name>
+		<servlet-class>KappaCRM.Controller.CControllerMain</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Main</servlet-name>
+		<url-pattern>/Main</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Profil</servlet-name>
+		<servlet-class>KappaCRM.Controller.CControllerProfil</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Profil</servlet-name>
+		<url-pattern>/Profil</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>DeclarationIncident</servlet-name>
+		<servlet-class>KappaCRM.Controller.CControllerDeclarationIncident</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeclarationIncident</servlet-name>
+		<url-pattern>/Incident/Declaration</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Litige</servlet-name>
+		<servlet-class>KappaCRM.Controller.CControllerLitige</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Litige</servlet-name>
+		<url-pattern>/Litige</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>AjoutEntite</servlet-name>
+		<servlet-class>KappaCRM.Controller.CControllerAjoutEntite</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AjoutEntite</servlet-name>
+		<url-pattern>/Entite/AjoutEntite</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SelectEntite</servlet-name>
+		<servlet-class>KappaCRM.Controller.CControllerSelectEntite</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SelectEntite</servlet-name>
+		<url-pattern>/Entite/SelectEntite</url-pattern>
+	</servlet-mapping>
+	
+	</web-app>
 
 
 

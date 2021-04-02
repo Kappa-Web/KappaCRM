@@ -1,17 +1,20 @@
 package KappaCRM.Controller;
 
 import java.io.IOException;
-
-import KappaCRM.Service.CServiceConnection;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import KappaCRM.Model.CModelCompte;
+import KappaCRM.Model.CModelIncident;
+import KappaCRM.Repository.CRepositoryIncident;
+import KappaCRM.Service.CServiceCompte;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
 public class CControllerConnection extends HttpServlet{
 	
-	CServiceConnection serviceConnection;
+	
+	
 	
 	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
 		
@@ -21,9 +24,22 @@ public class CControllerConnection extends HttpServlet{
 	
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
 		
+		CServiceCompte service = new CServiceCompte();
+		CModelCompte compte =new CModelCompte();
+		compte.setIdentifiant(request.getParameter("identifiant"));
+		compte.setMotDePasse( request.getParameter("motdepasse"));
 		
-		request.getSession().setAttribute("id", request.getParameter("id"));
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/Accueil.jsp" ).forward( request, response );
+		if(service.CompteExistByUsernameAndPassword(compte)) {
+			compte = service.getCompteByUsernameAndPassword(compte);
+			request.getSession().setAttribute("compte", compte);
+			response.sendRedirect("/KappaCRM/Main");
+		}
+		else
+		{
+			request.setAttribute("error", "identifiant or mot de passe invalide");
+			this.getServletContext().getRequestDispatcher( "/WEB-INF/Connection.jsp" ).forward( request, response );
+		}
+		
 	}
 }
 

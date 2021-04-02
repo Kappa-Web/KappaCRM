@@ -1,12 +1,10 @@
 package KappaCRM.Controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
 public class CControllerAccueil extends HttpServlet {
@@ -16,6 +14,6 @@ public class CControllerAccueil extends HttpServlet {
 	}
 	
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/Connection.jsp" ).forward( request, response );
+		//this.getServletContext().getRequestDispatcher( "/WEB-INF/Connection.jsp" ).forward( request, response );
 	}
 }
