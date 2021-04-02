@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
-<form method="post" action="">
+<form method="post" action="../Entite/SelectEntite">
       <label for="typeEntite">Choose a entity :</label>
 <select name="typeEntite" id="typeEntite">
 
