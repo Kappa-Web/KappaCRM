@@ -69,6 +69,16 @@
 		<servlet-name>AjoutEntite</servlet-name>
 		<url-pattern>/Entite/AjoutEntite</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SelectEntite</servlet-name>
+		<servlet-class>KappaCRM.Controller.CControllerSelectEntite</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SelectEntite</servlet-name>
+		<url-pattern>/Entite/SelectEntite</url-pattern>
+	</servlet-mapping>
+	
 	</web-app>
 
 
