@@ -6,6 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Profil</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/profil.css"/>
 </head>
 <body>
 <div>Profil</div>

@@ -4,10 +4,11 @@
     <head>
         <meta charset="utf-8" />
         <title>Connection</title>
-        <link type="text/css" rel="stylesheet" href="form.css" />
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/connection.css"/>
     </head>
     <body>
-        <form method="post" action="Connection">
+    <div class="form">
+    	<form method="post" action="Connection">
             <fieldset>
                 <legend>Connection</legend>
                 <p>Vous pouvez vous connecter via ce formulaire.</p>
@@ -28,5 +29,6 @@
                       
             </fieldset>
         </form>
+    </div>    
     </body>
 </html>

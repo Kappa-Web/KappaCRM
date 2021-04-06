@@ -1,0 +1,11 @@
+body {
+	background-color:#7CAF83;
+}
+
+.form {
+	display: block;
+	width: 150px;
+	float: left;
+	text-align:center;
+}
+

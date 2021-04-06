@@ -5,11 +5,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Incident</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/declarationIncident.css"/>
+
 </head>
 <body>
 <div>Declaration d'un incident</div>
-
- <form method="post" action="">
+<div class="form">
+<form method="post" action="">
             <fieldset>
                 <legend>Déclarer un incident</legend>
                 <p>Vous pouvez declarer un incident via ce formulaire.</p>
@@ -31,7 +33,8 @@
                       
             </fieldset>
 	</form>
-	
+</div>
+ 
 
 </body>
 </html>
