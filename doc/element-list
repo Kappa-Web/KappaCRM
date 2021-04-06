@@ -1,0 +1,8 @@
+KappaCRM.Controller
+KappaCRM.Infrastructure
+KappaCRM.Initialization
+KappaCRM.Interface
+KappaCRM.Model
+KappaCRM.Repository
+KappaCRM.Service
+KappaCRM.Utility

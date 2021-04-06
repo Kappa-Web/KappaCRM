@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"KappaCRM.Controller"},{"l":"KappaCRM.Infrastructure"},{"l":"KappaCRM.Initialization"},{"l":"KappaCRM.Interface"},{"l":"KappaCRM.Model"},{"l":"KappaCRM.Repository"},{"l":"KappaCRM.Service"},{"l":"KappaCRM.Utility"}];updateSearchResults();

@@ -9,6 +9,7 @@ public class CModelEntity {
 	private String nom;
 	private String prenom;
 	private long fk_civilite;
+	private String civilite;
 	private String adresse;
 	private String email;
 	private String numero;
@@ -17,6 +18,7 @@ public class CModelEntity {
 	private int nb_incident;
 	private int nb_mission;
 	private long fk_sexe;
+	private String sexe;
 	private String commentaire;
 	private int score;
 	
@@ -131,6 +133,22 @@ public class CModelEntity {
 
 	public void setScore(int score) {
 		this.score = score;
+	}
+
+	public String getSexe() {
+		return sexe;
+	}
+
+	public void setSexe(String sexe) {
+		this.sexe = sexe;
+	}
+
+	public String getCivilite() {
+		return civilite;
+	}
+
+	public void setCivilite(String civilite) {
+		this.civilite = civilite;
 	}
 
 }
