@@ -85,7 +85,7 @@ public class CControllerAjoutEntite  extends HttpServlet{
 		entity.setNumero(CUtilityValidation.StringOrNull(request.getParameter("numero")));
 		
 		String date = CUtilityValidation.StringOrNull(request.getParameter("dateNaissance"));
-		if(date != null)
+		if(date != null && date != "")
 		{
 			date = date.replace("T", " ") +":00";
 			entity.setDate_naissance(Timestamp.valueOf(date));
@@ -95,8 +95,9 @@ public class CControllerAjoutEntite  extends HttpServlet{
 			entity.setDate_naissance(null);
 		}
 		
-		date = CUtilityValidation.StringOrNull(request.getParameter("dateMort"));
-		if(date != null)
+		
+		date = CUtilityValidation.StringOrNull(request.getParameter("dateMort"));		
+		if(date != null && date != "")
 		{
 			date = date.replace("T", " ")+ ":00";
 			entity.setDate_mort(Timestamp.valueOf(date));
@@ -109,7 +110,7 @@ public class CControllerAjoutEntite  extends HttpServlet{
 		entity.setCommentaire(CUtilityValidation.StringOrNull(request.getParameter("commentaire")));
 		entity.setScore(Integer.parseInt(CUtilityValidation.StringOrNull(request.getParameter("score"))));
 		CServiceEntite serviceEntite = new CServiceEntite();
-		serviceEntite.insertEntite(entity);
+		//serviceEntite.insertEntite(entity);
 		
 	}
 }

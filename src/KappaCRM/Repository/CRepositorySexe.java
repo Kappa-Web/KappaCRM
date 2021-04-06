@@ -43,4 +43,30 @@ public class CRepositorySexe {
 		sexe.setLibelle(result_.getString("libelle"));
 		return sexe;
 	}
+	
+	
+	public CModelSexe findById(long id) throws SQLException{
+		
+		Connection conn;
+		
+		conn = CUtilityStorage.getBasicConnectionPool().getConnection();
+		PreparedStatement state = conn.prepareStatement("SELECT * FROM sexe where id = ?");
+
+		state.setLong(1, id);
+			
+		ResultSet result = state.executeQuery();
+		
+		CUtilityStorage.getBasicConnectionPool().releaseConnection(conn);
+		
+		CModelSexe sexe = new CModelSexe();
+		
+		while(result.next())
+		{
+			sexe =createModel(result);
+		}
+		
+		
+		
+		return sexe;
+	}
 }

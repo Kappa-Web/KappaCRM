@@ -4,8 +4,7 @@ import java.io.IOException;
 
 import KappaCRM.Model.CModelCompte;
 import KappaCRM.Model.CModelEntity;
-import KappaCRM.Repository.CRepositoryEntity;
-import KappaCRM.Service.CServiceProfil;
+import KappaCRM.Service.CServiceEntite;
 import KappaCRM.Utility.CUtilityValidation;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -24,8 +23,8 @@ public class CControllerProfil extends HttpServlet {
 			
 			CModelCompte compte = (CModelCompte) session.getAttribute("compte");
 			
-			CServiceProfil serviceProfil = new CServiceProfil();
-			CModelEntity entity = serviceProfil.findById(compte.getFk_id_entity());
+			CServiceEntite serviceEntite = new CServiceEntite();
+			CModelEntity entity = serviceEntite.findById(compte.getFk_id_entity());
 			request.setAttribute("entity", entity);
 			this.getServletContext().getRequestDispatcher( "/WEB-INF/Profil.jsp" ).forward( request, response );
 		}

@@ -24,13 +24,13 @@ public class CRepositoryCivilite {
 
 		CUtilityStorage.getBasicConnectionPool().releaseConnection(conn);
 
-		List<CModelCivilite> comptes = new ArrayList<>();
+		List<CModelCivilite> civilites = new ArrayList<>();
 
 		while(result.next()) {
-			comptes.add(createModel(result));
+			civilites.add(createModel(result));
 		}
 
-		return comptes;		
+		return civilites;		
 	}
 	
 	private CModelCivilite createModel(ResultSet result_) throws SQLException {
@@ -38,6 +38,27 @@ public class CRepositoryCivilite {
 		civilite.setId(result_.getLong("id"));
 		civilite.setLibelle(result_.getString("libelle"));
 		return civilite;
+	}
+	
+	public CModelCivilite findById(long id_) throws SQLException{
+		Connection conn;
+
+		
+		conn = CUtilityStorage.getBasicConnectionPool().getConnection();
+		PreparedStatement state = conn.prepareStatement("SELECT * FROM civilite where id = ?");
+		state.setLong(1,id_);
+
+		ResultSet result = state.executeQuery();
+
+		CUtilityStorage.getBasicConnectionPool().releaseConnection(conn);
+
+		CModelCivilite civilite = new CModelCivilite();
+
+		while(result.next()) {
+			civilite=createModel(result);
+		}
+
+		return civilite;		
 	}
 
 }
