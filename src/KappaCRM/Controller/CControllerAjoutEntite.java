@@ -110,7 +110,7 @@ public class CControllerAjoutEntite  extends HttpServlet{
 		entity.setCommentaire(CUtilityValidation.StringOrNull(request.getParameter("commentaire")));
 		entity.setScore(Integer.parseInt(CUtilityValidation.StringOrNull(request.getParameter("score"))));
 		CServiceEntite serviceEntite = new CServiceEntite();
-		//serviceEntite.insertEntite(entity);
+		serviceEntite.insertEntite(entity);
 		
 	}
 }
